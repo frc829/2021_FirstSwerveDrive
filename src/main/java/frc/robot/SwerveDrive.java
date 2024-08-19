@@ -119,11 +119,12 @@ public class SwerveDrive{
             this.JoyStickAngle = 0;     
         }
 
-        System.out.println("JoystickAngle" + this.JoyStickAngle);
+        //System.out.println("GetDegrees" + this.driver.getDirectionDegrees());
+        //System.out.println("JoystickAngle" + this.JoyStickAngle);
         if(Math.abs(rotationSpeed) < 0.2){rotationSpeed = 0;}
     
-        this.vx = this.JoyStickSpeed * Math.cos(Math.toRadians(this.JoyStickAngle));
-        this.vy = this.JoyStickSpeed * Math.sin(Math.toRadians(this.JoyStickAngle));        
+        this.vx = this.JoyStickSpeed * Math.sin(Math.toRadians(this.JoyStickAngle));
+        this.vy = this.JoyStickSpeed * Math.cos(Math.toRadians(this.JoyStickAngle));        
 
 
         this.chassisSpeeds = new ChassisSpeeds(this.vx,this.vy,this.rotationSpeed);
